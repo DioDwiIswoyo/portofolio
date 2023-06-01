@@ -190,6 +190,7 @@
               // tombol loading kirim hilang
               btnloading.classList.toggle('d-none');
               btnkirim.classList.toggle('d-none');
+              
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
                     //tombol kirm
@@ -197,6 +198,8 @@
                      btnkirim.classList.toggle('d-none');
                      //alert
                      myalert.classList.toggle('d-none');
+                     //reset
+                     form.reset();
                     console.log('Success!', response)
             })
                 .catch(error => console.error('Error!', error.message))
